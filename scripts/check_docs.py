@@ -2,7 +2,7 @@
 """Check the playbook's Markdown files. Standard library only.
 
 Checks:
-  - every relative link points to a file or folder that exists
+  - every relative link (inline, image or reference-style) points to a file or folder that exists
   - every #anchor points to a heading that exists (GitHub slug rules)
   - no leftover TODO / FIXME / TBD markers
   - templates ship with blank Author / Owner fields
@@ -16,7 +16,8 @@ import sys
 from pathlib import Path
 
 SKIP_DIRS = {".git", "node_modules", ".github"}
-LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
+LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
+REF_DEF_RE = re.compile(r"^\s{0,3}\[[^\]]+\]:\s*(\S+)")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*?)\s*#*\s*$")
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
 INLINE_CODE_RE = re.compile(r"`[^`]*`")
@@ -69,7 +70,7 @@ def check_links(root, path, text, cache):
     problems = []
     rel = path.relative_to(root)
     for lineno, line in enumerate(strip_code(text).splitlines(), 1):
-        for target in LINK_RE.findall(line):
+        for target in LINK_RE.findall(line) + REF_DEF_RE.findall(line):
             if re.match(r"^[a-z][a-z0-9+.-]*:", target, re.IGNORECASE):
                 continue  # http:, https:, mailto: and friends
             file_part, _, anchor = target.partition("#")

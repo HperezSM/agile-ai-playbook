@@ -80,6 +80,22 @@ class LinkTests(unittest.TestCase):
         with tmp:
             self.assertEqual(check_docs.check_repo(root), [])
 
+    def test_reference_style_links_are_checked(self):
+        tmp, root = make_repo({
+            "README.md": "[ok][a] [bad][b]\n\n[a]: ./a.md\n[b]: ./missing.md \"title\"\n",
+            "a.md": "# A\n",
+        })
+        with tmp:
+            problems = check_docs.check_repo(root)
+        self.assertEqual(len(problems), 1)
+        self.assertIn("missing.md", problems[0])
+
+    def test_relative_image_links_are_checked(self):
+        tmp, root = make_repo({"README.md": "![diagram](./img/missing.png)\n"})
+        with tmp:
+            problems = check_docs.check_repo(root)
+        self.assertEqual(len(problems), 1)
+
     def test_directory_link_must_exist(self):
         tmp, root = make_repo({"README.md": "[t](./templates/)\n", "templates/a.md": "# A\n"})
         with tmp:
