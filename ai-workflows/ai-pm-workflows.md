@@ -99,3 +99,5 @@ Given the following sprint status, team capacity, and open dependencies, identif
 - Trust-building with engineering
 
 AI accelerates information processing. The PM still owns the judgment layer.
+
+Before you wire any of these workflows to real data, read the [AI Guardrails for PMs](./ai-guardrails.md). All prompts above, plus more, are in the [prompt library](./claude-prompt-library.md).

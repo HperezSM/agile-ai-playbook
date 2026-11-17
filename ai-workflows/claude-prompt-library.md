@@ -2,6 +2,43 @@
 
 A curated set of prompts for Senior PMs and Scrum Masters. Tested in real delivery contexts.
 
+Read the [AI Guardrails for PMs](./ai-guardrails.md) before pasting real project data into any prompt.
+
+---
+
+## How These Prompts Are Built
+
+The short prompts below work as they are. When you need better output, rebuild them with this structure. Claude and most current models follow it well.
+
+1. **Role and context first.** Say who the output is for and what situation the team is in.
+2. **Separate your inputs with XML tags.** `<sprint_data>`, `<notes>`, `<story>` and similar tags stop the model from mixing your instructions with your data.
+3. **State the task plainly.** One clear instruction beats several vague ones.
+4. **Specify the output format.** A table, numbered list or fixed headings make the output easy to paste into a template.
+5. **Give an example** of a good answer when the format matters.
+6. **Tell it what to do when data is missing.** "Say 'not in the data'" prevents invented numbers.
+
+Example, the daily brief rebuilt:
+
+```
+You are helping a Senior PM prepare for today's Daily Scrum. The reader is the PM, who will review your brief before sharing anything.
+
+<sprint_data>
+[paste sprint data]
+</sprint_data>
+
+<open_items>
+[paste open items]
+</open_items>
+
+Write a morning brief with these headings:
+1. Sprint health: on track / at risk / off track, with the reason
+2. Top 3 blockers, each with a recommended action and owner
+3. Decisions needed today
+4. Stakeholder items waiting for a reply
+
+Use only the data above. If something is missing, write "not in the data" instead of guessing. Bullet points, no more than 200 words.
+```
+
 ---
 
 ## Daily Brief
