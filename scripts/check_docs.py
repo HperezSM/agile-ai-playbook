@@ -101,9 +101,13 @@ def check_content(root, path, text):
 
 def check_template_index(root):
     """Every template must be linked from templates/README.md so readers can find it."""
-    index = root / "templates" / "README.md"
-    if not index.is_file():
+    folder = root / "templates"
+    index = folder / "README.md"
+    templates = sorted(p for p in folder.rglob("*.md") if p != index) if folder.is_dir() else []
+    if not templates:
         return []
+    if not index.is_file():
+        return [f"templates/README.md is missing; it must list the {len(templates)} template(s)"]
     linked = set()
     for line in strip_code(index.read_text(encoding="utf-8")).splitlines():
         for target in LINK_RE.findall(line) + REF_DEF_RE.findall(line):
@@ -111,9 +115,9 @@ def check_template_index(root):
             if file_part:
                 linked.add((index.parent / file_part).resolve())
     problems = []
-    for path in sorted(index.parent.glob("*.md")):
-        if path.name != "README.md" and path.resolve() not in linked:
-            problems.append(f"templates/{path.name}: not listed in templates/README.md")
+    for path in templates:
+        if path.resolve() not in linked:
+            problems.append(f"{path.relative_to(root).as_posix()}: not listed in templates/README.md")
     return problems
 
 

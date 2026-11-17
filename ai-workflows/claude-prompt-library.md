@@ -140,6 +140,7 @@ You are helping a team lead prepare a weekly Kanban queue review.
 </board_export>
 
 Today is [date]. Our Service Level Expectation is 85% of items finished within [N] days.
+An item starts when it enters [first active column] and finishes when it reaches [done column]. Count calendar days, and count the start day as day 1.
 
 1. Count Work in Progress, Throughput for the last 7 days, and the 85th percentile Cycle Time of items finished in the last 30 days.
 2. List every unfinished item whose Work Item Age is above [N] days, oldest first, as a table: Item | Column | Age (days).

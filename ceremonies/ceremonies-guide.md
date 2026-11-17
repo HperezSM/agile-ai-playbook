@@ -120,11 +120,11 @@ Refinement is an ongoing activity in the Scrum Guide, not a formal event. Most t
 
 **Goal:** Align the Scrum Teams in a Nexus (3 to 9 teams) on one Nexus Sprint Goal and on cross-team dependencies before individual sprint planning.
 
-**Duration:** 1 hour before team-level planning.
+**Duration:** The Nexus Guide sets the outcomes, not the agenda or length. In practice I book 1 hour before team-level planning.
 
 **Who attends:** Appropriate representatives from each team, plus the Product Owner. The Nexus Integration Team makes sure integration is planned for.
 
-**Format:**
+**My format:**
 1. Review the single Product Backlog and agree the Nexus Sprint Goal (10 min)
 2. Each team identifies which items they own and flags dependencies (20 min)
 3. Resolve dependency conflicts; resequence or reassign work to remove them (20 min)
@@ -132,19 +132,19 @@ Refinement is an ongoing activity in the Scrum Guide, not a formal event. Most t
 
 **Template:** [Nexus Sprint Planning template](../templates/nexus-sprint-planning-template.md)
 
-The other Nexus events follow the same pattern: the **Nexus Daily Scrum** (see above), a single **Nexus Sprint Review** that replaces the individual team reviews, and a **Nexus Sprint Retrospective** that looks at cross-team issues before or after the team retros.
+The other Nexus events follow the same pattern: the **Nexus Daily Scrum** (see above), a single **Nexus Sprint Review** that replaces the individual team reviews, and a **Nexus Sprint Retrospective** that looks at cross-team issues and concludes the Sprint. Each team's own retrospective complements it.
 
 ---
 
 ## Kanban Queue Review
 
-**Goal:** Keep continuous work flowing. Kanban teams have no sprints, so this weekly review takes the place of sprint planning: check flow, act on the oldest items, pull new work into free WIP slots, and adjust one policy.
+**Goal:** Keep continuous work flowing. The Kanban Guide asks for flow measures and continuous improvement but prescribes no meetings. This playbook uses one weekly review that combines the replenishment and service delivery review cadences from the Kanban Method: check flow, act on the oldest items, pull new work into free WIP slots, and adjust one policy. For a team moving off Scrum, it takes the place of sprint planning.
 
 **Duration:** 30 to 45 minutes, weekly.
 
 **Who attends:** The people doing the work, plus whoever decides which requests go first (service owner or Product Owner).
 
-**Format:**
+**My format:**
 1. Flow since last review: WIP, Throughput, Cycle Time and the oldest Work Item Age (5 min)
 2. Oldest items first: every item past the Service Level Expectation gets an owner and an action (15 min)
 3. Blockers and dependencies (5 min)

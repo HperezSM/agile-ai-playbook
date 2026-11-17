@@ -97,7 +97,11 @@ class LinkTests(unittest.TestCase):
         self.assertEqual(len(problems), 1)
 
     def test_directory_link_must_exist(self):
-        tmp, root = make_repo({"README.md": "[t](./templates/)\n", "templates/a.md": "# A\n"})
+        tmp, root = make_repo({
+            "README.md": "[t](./templates/)\n",
+            "templates/README.md": "[A](./a.md)\n",
+            "templates/a.md": "# A\n",
+        })
         with tmp:
             self.assertEqual(check_docs.check_repo(root), [])
 
@@ -113,6 +117,7 @@ class ContentTests(unittest.TestCase):
     def test_template_with_filled_author_is_reported(self):
         tmp, root = make_repo({
             "README.md": "# R\n",
+            "templates/README.md": "[PRD](./prd.md)\n",
             "templates/prd.md": "# PRD\n**Author:** Jane Doe\n",
         })
         with tmp:
@@ -123,6 +128,7 @@ class ContentTests(unittest.TestCase):
     def test_template_with_blank_author_passes(self):
         tmp, root = make_repo({
             "README.md": "# R\n",
+            "templates/README.md": "[PRD](./prd.md)\n",
             "templates/prd.md": "# PRD\n**Author:**\n**Owner:** \n",
         })
         with tmp:
@@ -159,6 +165,24 @@ class TemplateIndexTests(unittest.TestCase):
         with tmp:
             problems = check_docs.check_repo(root)
         self.assertEqual(len(problems), 1)
+
+    def test_templates_without_index_are_reported(self):
+        tmp, root = make_repo({"templates/a.md": "# A\n"})
+        with tmp:
+            problems = check_docs.check_repo(root)
+        self.assertEqual(len(problems), 1)
+        self.assertIn("templates/README.md is missing", problems[0])
+
+    def test_nested_template_missing_from_index_is_reported(self):
+        tmp, root = make_repo({
+            "templates/README.md": "# T\n[A](./a.md)\n",
+            "templates/a.md": "# A\n",
+            "templates/nexus/b.md": "# B\n",
+        })
+        with tmp:
+            problems = check_docs.check_repo(root)
+        self.assertEqual(len(problems), 1)
+        self.assertIn("templates/nexus/b.md", problems[0])
 
     def test_no_templates_folder_is_fine(self):
         tmp, root = make_repo({"README.md": "# R\n"})
