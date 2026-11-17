@@ -6,6 +6,7 @@ Checks:
   - every #anchor points to a heading that exists (GitHub slug rules)
   - no leftover TODO / FIXME / TBD markers
   - templates ship with blank Author / Owner fields
+  - every template is listed in templates/README.md
 
 Usage: python3 scripts/check_docs.py [repo_root]
 Exit code 0 when clean, 1 when problems are found.
@@ -98,6 +99,24 @@ def check_content(root, path, text):
     return problems
 
 
+def check_template_index(root):
+    """Every template must be linked from templates/README.md so readers can find it."""
+    index = root / "templates" / "README.md"
+    if not index.is_file():
+        return []
+    linked = set()
+    for line in strip_code(index.read_text(encoding="utf-8")).splitlines():
+        for target in LINK_RE.findall(line) + REF_DEF_RE.findall(line):
+            file_part = target.partition("#")[0]
+            if file_part:
+                linked.add((index.parent / file_part).resolve())
+    problems = []
+    for path in sorted(index.parent.glob("*.md")):
+        if path.name != "README.md" and path.resolve() not in linked:
+            problems.append(f"templates/{path.name}: not listed in templates/README.md")
+    return problems
+
+
 def check_repo(root):
     root = Path(root).resolve()
     problems = []
@@ -106,6 +125,7 @@ def check_repo(root):
         text = path.read_text(encoding="utf-8")
         problems += check_links(root, path, text, cache)
         problems += check_content(root, path, text)
+    problems += check_template_index(root)
     return problems
 
 

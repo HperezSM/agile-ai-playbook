@@ -129,6 +129,43 @@ class ContentTests(unittest.TestCase):
             self.assertEqual(check_docs.check_repo(root), [])
 
 
+class TemplateIndexTests(unittest.TestCase):
+    def test_template_missing_from_index_is_reported(self):
+        tmp, root = make_repo({
+            "templates/README.md": "# T\n[A](./a.md)\n",
+            "templates/a.md": "# A\n",
+            "templates/b.md": "# B\n",
+        })
+        with tmp:
+            problems = check_docs.check_repo(root)
+        self.assertEqual(len(problems), 1)
+        self.assertIn("b.md", problems[0])
+        self.assertIn("templates/README.md", problems[0])
+
+    def test_all_templates_indexed_passes(self):
+        tmp, root = make_repo({
+            "templates/README.md": "# T\n[A](./a.md) [B](b.md#b)\n",
+            "templates/a.md": "# A\n",
+            "templates/b.md": "# B\n",
+        })
+        with tmp:
+            self.assertEqual(check_docs.check_repo(root), [])
+
+    def test_link_inside_code_does_not_count_as_indexed(self):
+        tmp, root = make_repo({
+            "templates/README.md": "# T\n`[A](./a.md)`\n",
+            "templates/a.md": "# A\n",
+        })
+        with tmp:
+            problems = check_docs.check_repo(root)
+        self.assertEqual(len(problems), 1)
+
+    def test_no_templates_folder_is_fine(self):
+        tmp, root = make_repo({"README.md": "# R\n"})
+        with tmp:
+            self.assertEqual(check_docs.check_repo(root), [])
+
+
 class MainTests(unittest.TestCase):
     def test_exit_codes(self):
         tmp, root = make_repo({"README.md": "[x](./nope.md)\n"})
