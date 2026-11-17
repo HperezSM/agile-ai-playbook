@@ -49,7 +49,7 @@ When 3 to 9 Scrum Teams work on a single product, introduce Nexus. Nexus is a de
 - Nexus Sprint Retrospective looks at problems that cross team boundaries
 
 **From experience (3 concurrent teams):**
-The biggest value of Nexus is forcing explicit dependency mapping. Without it, teams discover conflicts at integration — after the sprint ends.
+The biggest value of Nexus is forcing explicit dependency mapping. Without it, teams discover conflicts at integration — after the sprint ends. The [Nexus Sprint Planning template](../templates/nexus-sprint-planning-template.md) makes the mapping part of planning.
 
 ---
 
@@ -67,7 +67,7 @@ Apply Kanban to any workflow that is continuous rather than iterative.
 - WIP limits per column. Start low (about one item per person in the column) and adjust from data.
 - Explicit policies for each column — teams should not guess what "In Review" means
 - Flow metrics instead of velocity (see below)
-- Weekly queue review replaces sprint planning
+- Weekly queue review replaces sprint planning (see the [Kanban Queue Review](../ceremonies/ceremonies-guide.md#kanban-queue-review))
 
 **The four flow metrics (Kanban Guide 2020):**
 

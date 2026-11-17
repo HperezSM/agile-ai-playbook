@@ -130,4 +130,32 @@ Refinement is an ongoing activity in the Scrum Guide, not a formal event. Most t
 3. Resolve dependency conflicts; resequence or reassign work to remove them (20 min)
 4. Teams proceed to individual sprint planning with dependencies visible (10 min)
 
+**Template:** [Nexus Sprint Planning template](../templates/nexus-sprint-planning-template.md)
+
 The other Nexus events follow the same pattern: the **Nexus Daily Scrum** (see above), a single **Nexus Sprint Review** that replaces the individual team reviews, and a **Nexus Sprint Retrospective** that looks at cross-team issues before or after the team retros.
+
+---
+
+## Kanban Queue Review
+
+**Goal:** Keep continuous work flowing. Kanban teams have no sprints, so this weekly review takes the place of sprint planning: check flow, act on the oldest items, pull new work into free WIP slots, and adjust one policy.
+
+**Duration:** 30 to 45 minutes, weekly.
+
+**Who attends:** The people doing the work, plus whoever decides which requests go first (service owner or Product Owner).
+
+**Format:**
+1. Flow since last review: WIP, Throughput, Cycle Time and the oldest Work Item Age (5 min)
+2. Oldest items first: every item past the Service Level Expectation gets an owner and an action (15 min)
+3. Blockers and dependencies (5 min)
+4. Replenishment: pull new work only into free WIP slots (10 min)
+5. One policy or WIP limit change, with a date to check its effect (5 min)
+
+**Common mistakes:**
+- Reviewing the newest tickets instead of the oldest → stuck work keeps aging
+- Pulling new work past the WIP limit because it is urgent → use an explicit Expedite class instead
+- Changing several policies at once → you cannot tell which change helped
+
+**Template:** [Kanban Queue Review template](../templates/kanban-queue-review-template.md)
+
+**AI assist:** The [Kanban flow summary prompt](../ai-workflows/claude-prompt-library.md#kanban-flow-summary) pre-computes the flow measures from a board export.

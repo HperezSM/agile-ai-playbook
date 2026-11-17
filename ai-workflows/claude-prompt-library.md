@@ -126,6 +126,30 @@ Given these items across 3 Scrum teams, identify cross-team dependencies that co
 Items: [paste items]
 ```
 
+Paste the result into the [Nexus Sprint Planning template](../templates/nexus-sprint-planning-template.md) after you check it with the teams.
+
+---
+
+## Kanban Flow Summary
+
+```
+You are helping a team lead prepare a weekly Kanban queue review.
+
+<board_export>
+[paste items: title, current column, start date, finish date if done, class of service. No customer or personal data.]
+</board_export>
+
+Today is [date]. Our Service Level Expectation is 85% of items finished within [N] days.
+
+1. Count Work in Progress, Throughput for the last 7 days, and the 85th percentile Cycle Time of items finished in the last 30 days.
+2. List every unfinished item whose Work Item Age is above [N] days, oldest first, as a table: Item | Column | Age (days).
+3. Name the column where most of the old items are waiting.
+
+Use only the data above. If a date is missing, say "not in the data" for that item instead of guessing. Show how you counted.
+```
+
+Use the output to pre-fill sections 1 and 2 of the [Kanban Queue Review template](../templates/kanban-queue-review-template.md). Check the numbers against the board before the meeting.
+
 ---
 
 ## Hiring and Team Assessment

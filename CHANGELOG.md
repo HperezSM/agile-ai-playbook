@@ -3,11 +3,13 @@
 ## 1.0.0 (2026-11-17)
 
 ### Added
-- Templates: stakeholder update, sprint planning, Definition of Done and Ready, RAID log, and a templates index
+- Templates: stakeholder update, sprint planning, Nexus sprint planning, Kanban queue review, Definition of Done and Ready, RAID log, and a templates index
+- Ceremonies guide: Kanban Queue Review section
+- Prompt library: Kanban flow summary prompt
 - AI Guardrails for PMs: data handling, personal data, human review, automation safety
 - Prompt library: how to structure prompts, with a rebuilt daily brief example
 - Kanban flow metrics table and links to the official guides
-- Docs checker with unit tests, run in GitHub Actions
+- Docs checker with unit tests, run in GitHub Actions; it also fails when a template is missing from the templates index
 - LICENSE (CC BY 4.0) and CONTRIBUTING guide
 
 ### Changed

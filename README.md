@@ -15,11 +15,11 @@ Built by **Herber Giovanni Perez** — Senior Technical PM based in Guatemala Ci
 | Section | Description |
 |---|---|
 | [Hybrid Framework](./framework/hybrid-agile-model.md) | How to combine Scrum, Nexus, and Kanban based on team context, including Kanban flow metrics |
-| [Sprint Ceremonies](./ceremonies/ceremonies-guide.md) | Practical guides for each Scrum and Nexus event |
+| [Sprint Ceremonies](./ceremonies/ceremonies-guide.md) | Practical guides for each Scrum and Nexus event, plus the weekly Kanban queue review |
 | [AI-Assisted Delivery](./ai-workflows/ai-pm-workflows.md) | How AI tools augment daily PM and Scrum workflows |
 | [AI Guardrails](./ai-workflows/ai-guardrails.md) | Rules for using AI on real project data: confidentiality, personal data, human review |
 | [Prompt Library](./ai-workflows/claude-prompt-library.md) | Claude AI prompts built for PM and Scrum contexts, and how to structure your own |
-| [PM Templates](./templates/README.md) | Sprint planning, sprint review, retrospective, DoD/DoR, stakeholder update, RAID log, PRD |
+| [PM Templates](./templates/README.md) | Sprint planning, Nexus sprint planning, Kanban queue review, sprint review, retrospective, DoD/DoR, stakeholder update, RAID log, PRD |
 
 ---
 
