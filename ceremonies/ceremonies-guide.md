@@ -6,9 +6,14 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 
 ## Sprint Planning
 
-**Goal:** Align the team on what will be built and how, resulting in a committed sprint backlog and a clear sprint goal.
+**Goal:** Agree why the sprint is valuable, what can be done, and how the work will get done. The output is a Sprint Goal, the selected backlog items, and a plan for delivering them (together, the Sprint Backlog).
 
-**Duration:** 2 hours max for a 2-week sprint.
+**Duration:** The Scrum Guide caps it at 8 hours for a one-month sprint, shorter for shorter sprints. In practice I aim for 2 hours on a 2-week sprint.
+
+**The three topics (Scrum Guide 2020):**
+1. **Why** is this sprint valuable? The Product Owner proposes how the product could increase its value; the whole Scrum Team then shapes the Sprint Goal together.
+2. **What** can be done this sprint? Developers select items from the Product Backlog based on past performance and upcoming capacity.
+3. **How** will the chosen work get done? Developers break items into work small enough to start, often a day or less.
 
 **Common mistakes:**
 - Starting without a sprint goal → fills sprint with tasks, not outcomes
@@ -16,11 +21,13 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 - Team commits to more than capacity allows → sprint fails predictably
 
 **My format:**
-1. PO states sprint goal (5 min)
+1. PO proposes the value of the sprint; team drafts the Sprint Goal (10 min)
 2. Team reviews top backlog items — questions and clarifications only (20 min)
-3. Team self-selects stories up to capacity (30 min)
-4. Task breakdown for Day 1-3 items (30 min)
-5. Confirm sprint goal and commitment (5 min)
+3. Developers select items up to capacity (30 min)
+4. Breakdown of the work for the first days of the sprint (30 min)
+5. Read back the Sprint Goal and confirm the plan (5 min)
+
+**Template:** [Sprint Planning template](../templates/sprint-planning-template.md)
 
 **AI assist:** Use Claude to pre-draft a candidate sprint backlog based on velocity and backlog priority. Start planning from a draft, not a blank slate.
 
@@ -30,16 +37,18 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 
 **Goal:** Synchronize the team and surface blockers. Not a status report.
 
-**Duration:** 15 minutes hard stop.
+**Duration:** 15 minutes hard stop, same time and place every working day.
 
-**Format (3 questions):**
+**Format:** Since the 2020 Scrum Guide, the Developers choose any structure that keeps the focus on progress toward the Sprint Goal. The classic three questions are now optional. They still work well for new teams:
 1. What did I complete that moves us toward the sprint goal?
 2. What will I do today toward the sprint goal?
 3. Is anything blocking me?
 
+Mature teams often "walk the board" instead: go right to left across the board and talk about the work that is closest to done.
+
 **Facilitator role:** Surface blockers immediately. Do not solve them in standup. Schedule a follow-up with the relevant people.
 
-**Nexus add-on:** 15-min Nexus Daily Scrum after individual standups. Each team sends one rep. Focus: cross-team dependencies and integration risks only.
+**Nexus add-on:** The Nexus Daily Scrum is attended by representatives of each team. Focus: integration issues and new cross-team dependencies only. Teams then carry what they learned into their own Daily Scrums.
 
 ---
 
@@ -47,9 +56,11 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 
 **Goal:** Inspect the increment and adapt the backlog based on stakeholder feedback.
 
-**Duration:** 1 hour for a 2-week sprint.
+**Duration:** The Scrum Guide caps it at 4 hours for a one-month sprint. I run 1 hour for a 2-week sprint.
 
-**Who attends:** Team + Product stakeholders + Key users when possible.
+**Who attends:** Team + Product stakeholders + Key users when possible. Treat it as a working session, not a presentation.
+
+**Template:** [Sprint Review template](../templates/sprint-review-template.md)
 
 **Format:**
 1. Sprint goal recap — did we achieve it? (5 min)
@@ -68,7 +79,7 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 
 **Goal:** Inspect how the team worked and commit to one improvement for the next sprint.
 
-**Duration:** 1 hour.
+**Duration:** The Scrum Guide caps it at 3 hours for a one-month sprint. One hour is enough for a 2-week sprint.
 
 **Format I use (Start / Stop / Continue + Action):**
 1. Individual silent reflection (5 min)
@@ -79,7 +90,9 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 
 **Rule:** One action item that actually gets done beats five that get ignored.
 
-**AI assist:** Use Claude to generate targeted prompts based on the team's recent pattern (late dependency discovery, unclear goals, etc.). See [prompt library](../ai-workflows/claude-prompt-library.md).
+**AI assist:** Use Claude to generate targeted prompts based on the team's recent pattern (late dependency discovery, unclear goals, etc.). See [prompt library](../ai-workflows/claude-prompt-library.md#retrospective-prompts).
+
+**Template:** [Retrospective template](../templates/retrospective-template.md)
 
 ---
 
@@ -87,9 +100,11 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 
 **Goal:** Ensure the top of the backlog is ready for sprint planning.
 
+Refinement is an ongoing activity in the Scrum Guide, not a formal event. Most teams still book a regular slot so it actually happens.
+
 **Duration:** 30-45 min, weekly.
 
-**Ready criteria (Definition of Ready):**
+**Ready criteria (Definition of Ready):** This is a team practice, not part of the Scrum Guide. Keep it short so it does not become a gate. See the [Definition of Done and Ready template](../templates/definition-of-done-and-ready.md).
 - User story has acceptance criteria
 - Dependencies identified
 - Estimated by the team
@@ -103,12 +118,16 @@ Practical, no-fluff guide to running each Agile ceremony effectively. Based on 9
 
 ## Nexus Sprint Planning (Multi-Team)
 
-**Goal:** Align 3+ Scrum teams on cross-team dependencies before individual sprint planning.
+**Goal:** Align the Scrum Teams in a Nexus (3 to 9 teams) on one Nexus Sprint Goal and on cross-team dependencies before individual sprint planning.
 
 **Duration:** 1 hour before team-level planning.
 
+**Who attends:** Appropriate representatives from each team, plus the Product Owner. The Nexus Integration Team makes sure integration is planned for.
+
 **Format:**
-1. Review integrated product backlog — what is the overall sprint goal? (10 min)
+1. Review the single Product Backlog and agree the Nexus Sprint Goal (10 min)
 2. Each team identifies which items they own and flags dependencies (20 min)
-3. Resolve dependency conflicts and assign integration work to NIT (20 min)
-4. Teams proceed to individual sprint planning with dependencies locked (10 min)
+3. Resolve dependency conflicts; resequence or reassign work to remove them (20 min)
+4. Teams proceed to individual sprint planning with dependencies visible (10 min)
+
+The other Nexus events follow the same pattern: the **Nexus Daily Scrum** (see above), a single **Nexus Sprint Review** that replaces the individual team reviews, and a **Nexus Sprint Retrospective** that looks at cross-team issues before or after the team retros.
