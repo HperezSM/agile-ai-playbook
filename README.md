@@ -14,11 +14,22 @@ Built by **Herber Giovanni Perez** — Senior Technical PM based in Guatemala Ci
 
 | Section | Description |
 |---|---|
-| [Hybrid Framework](./framework/hybrid-agile-model.md) | How to combine Scrum, Nexus, and Kanban based on team context |
+| [Hybrid Framework](./framework/hybrid-agile-model.md) | How to combine Scrum, Nexus, and Kanban based on team context, including Kanban flow metrics |
+| [Sprint Ceremonies](./ceremonies/ceremonies-guide.md) | Practical guides for each Scrum and Nexus event, plus the weekly Kanban queue review |
 | [AI-Assisted Delivery](./ai-workflows/ai-pm-workflows.md) | How AI tools augment daily PM and Scrum workflows |
-| [Sprint Ceremonies](./ceremonies/ceremonies-guide.md) | Practical guides for each Agile ceremony |
-| [PM Templates](./templates/) | PRD, retrospective, sprint review, and stakeholder templates |
-| [Prompt Library](./ai-workflows/claude-prompt-library.md) | Claude AI prompts built for PM and Scrum contexts |
+| [AI Guardrails](./ai-workflows/ai-guardrails.md) | Rules for using AI on real project data: confidentiality, personal data, human review |
+| [Prompt Library](./ai-workflows/claude-prompt-library.md) | Claude AI prompts built for PM and Scrum contexts, and how to structure your own |
+| [Worked Example](./examples/README.md) | One fictional sprint from planning to stakeholder update, with every template filled in and an AI daily brief reviewed line by line |
+| [PM Templates](./templates/README.md) | Sprint planning, Nexus sprint planning, Kanban queue review, sprint review, retrospective, DoD/DoR, stakeholder update, RAID log, PRD |
+
+---
+
+## How to Use It
+
+1. Start with the [decision matrix](./framework/hybrid-agile-model.md#decision-matrix-which-method-to-apply) to pick the method that fits each team.
+2. Run your events with the [ceremonies guide](./ceremonies/ceremonies-guide.md); each section links to its template.
+3. Add AI help one workflow at a time, after your team agrees the [guardrails](./ai-workflows/ai-guardrails.md).
+4. Copy the [templates](./templates/README.md) into your own tools and adapt them. The [worked example](./examples/README.md) shows each one filled in.
 
 ---
 

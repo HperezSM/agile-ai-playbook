@@ -1,7 +1,7 @@
 # Product Requirements Document (PRD)
 
 **Feature Name:**
-**Author:** Herber Giovanni Perez
+**Author:**
 **Date:**
 **Status:** Draft / In Review / Approved
 
