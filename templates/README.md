@@ -1,6 +1,6 @@
 # PM Templates
 
-Copy a template into your own wiki or repo, then delete any section your team does not use.
+Copy a template into your own wiki or repo, then delete any section your team does not use. To see them filled in for one sprint, read the [worked example](../examples/README.md).
 
 | Template | Use it for | Related guide |
 |---|---|---|

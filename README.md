@@ -19,6 +19,7 @@ Built by **Herber Giovanni Perez** — Senior Technical PM based in Guatemala Ci
 | [AI-Assisted Delivery](./ai-workflows/ai-pm-workflows.md) | How AI tools augment daily PM and Scrum workflows |
 | [AI Guardrails](./ai-workflows/ai-guardrails.md) | Rules for using AI on real project data: confidentiality, personal data, human review |
 | [Prompt Library](./ai-workflows/claude-prompt-library.md) | Claude AI prompts built for PM and Scrum contexts, and how to structure your own |
+| [Worked Example](./examples/README.md) | One fictional sprint from planning to stakeholder update, with every template filled in and an AI daily brief reviewed line by line |
 | [PM Templates](./templates/README.md) | Sprint planning, Nexus sprint planning, Kanban queue review, sprint review, retrospective, DoD/DoR, stakeholder update, RAID log, PRD |
 
 ---
@@ -28,7 +29,7 @@ Built by **Herber Giovanni Perez** — Senior Technical PM based in Guatemala Ci
 1. Start with the [decision matrix](./framework/hybrid-agile-model.md#decision-matrix-which-method-to-apply) to pick the method that fits each team.
 2. Run your events with the [ceremonies guide](./ceremonies/ceremonies-guide.md); each section links to its template.
 3. Add AI help one workflow at a time, after your team agrees the [guardrails](./ai-workflows/ai-guardrails.md).
-4. Copy the [templates](./templates/README.md) into your own tools and adapt them.
+4. Copy the [templates](./templates/README.md) into your own tools and adapt them. The [worked example](./examples/README.md) shows each one filled in.
 
 ---
 

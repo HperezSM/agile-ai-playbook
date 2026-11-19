@@ -11,6 +11,7 @@
 - Kanban flow metrics table and links to the official guides
 - Docs checker with unit tests, run in GitHub Actions; it also fails when a template is missing from the templates index
 - LICENSE (CC BY 4.0) and CONTRIBUTING guide
+- Worked example: one fictional sprint (Team Ceiba, Sprint 14) with sprint planning, an AI daily brief and its review, RAID log, sprint review, retrospective and stakeholder update filled in
 
 ### Changed
 - Ceremonies and framework aligned with the Scrum Guide 2020, Nexus Guide and Kanban Guide 2020
